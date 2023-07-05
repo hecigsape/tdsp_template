@@ -1,39 +1,53 @@
-# Reporte del Modelo Baseline
+# Descripción del Modelo
 
-Este documento contiene los resultados del modelo baseline.
+El modelo baseline es un enfoque combinado de dos redes neuronales para detectar y validar si una imagen contiene un rostro superpuesto.
 
-## Descripción del modelo
+El proceso se divide en dos etapas. En la primera etapa, se utiliza una red neuronal más rápida (faster) para identificar la ubicación aproximada del rostro en la imagen. Esta detección es rápida pero menos precisa.
 
-El modelo baseline es el primer modelo construido y se utiliza para establecer una línea base para el rendimiento de los modelos posteriores.
+En la segunda etapa, una vez obtenidas las coordenadas aproximadas del rostro, se recorta esa región de la imagen original y se pasa a través de una red neuronal convolucional (CNN) para realizar una validación más precisa. La CNN está diseñada para determinar si el rostro recortado corresponde a una imagen superpuesta o no.
 
-## Variables de entrada
+El resultado de la predicción se devuelve como un score (puntuación), que indica la probabilidad de que la imagen contenga un rostro superpuesto. Si el score es mayor o igual a 0.5, se considera que la imagen tiene un rostro superpuesto, y se establece el valor de reco como "TRUE". De lo contrario, se considera que la imagen no tiene un rostro superpuesto, y se establece reco como "FALSE".
 
-Lista de las variables de entrada utilizadas en el modelo.
+El modelo baseline utiliza las siguientes variables de entrada: [Lista de variables de entrada utilizadas en el modelo].
 
-## Variable objetivo
-
-Nombre de la variable objetivo utilizada en el modelo.
 
 ## Evaluación del modelo
 
 ### Métricas de evaluación
 
-Descripción de las métricas utilizadas para evaluar el rendimiento del modelo.
+El modelo baseline se evalúa utilizando las siguientes métricas:
+
+- Loss (Pérdida): 0.2349
+- Accuracy (Exactitud): 0.9107
+- Val_loss (Pérdida en validación): 0.3774
+- Val_accuracy (Exactitud en validación): 0.8673
 
 ### Resultados de evaluación
 
-Tabla que muestra los resultados de evaluación del modelo baseline, incluyendo las métricas de evaluación.
+A continuación se muestra una tabla con los resultados de evaluación del modelo baseline:
 
-## Análisis de los resultados
+| Métrica       | Resultado |
+|---------------|-----------|
+| Loss          | 0.2349    |
+| Accuracy      | 0.9107    |
+| Val_loss      | 0.3774    |
+| Val_accuracy  | 0.8673    |
 
-Descripción de los resultados del modelo baseline, incluyendo fortalezas y debilidades del modelo.
+## Análisis de los Resultados
+
+El modelo baseline ha demostrado un rendimiento prometedor en la detección de rostros superpuestos. Entre sus fortalezas se destacan:
+- Alta precisión con una exactitud de entrenamiento del 91.07%.
+- Buen rendimiento en la validación con una exactitud de validación del 86.73%.
+
+Sin embargo, el modelo baseline también tiene algunas limitaciones:
+- La pérdida en validación (val_loss) es mayor que la pérdida en entrenamiento (loss), lo que indica una posible sobreajuste del modelo.
 
 ## Conclusiones
 
-Conclusiones generales sobre el rendimiento del modelo baseline y posibles áreas de mejora.
+En conclusión, el modelo baseline proporciona una línea base para el rendimiento de los modelos posteriores en la detección de rostros superpuestos. Si bien presenta algunas limitaciones, su rendimiento prometedor y alta precisión hacen de este modelo un buen punto de partida.
+
+Para mejorar el rendimiento, se sugiere explorar técnicas de regularización y ajuste de hiperparámetros para reducir el sobreajuste y obtener un mejor equilibrio entre la pérdida y la exactitud en entrenamiento y validación.
 
 ## Referencias
 
-Lista de referencias utilizadas para construir el modelo baseline y evaluar su rendimiento.
-
-Espero que te sea útil esta plantilla. Recuerda que puedes adaptarla a las necesidades específicas de tu proyecto.
+- Referencia 1: https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html
