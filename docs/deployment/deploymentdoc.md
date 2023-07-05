@@ -42,7 +42,7 @@ Diagrama de despliegue y funcionamiento del servicio:
   6. Espera a que se complete la construcción de la imagen.
   7. Una vez construida la imagen, crea y ejecuta el contenedor con el siguiente comando:
      ```
-     docker run -d -p 8080:8080 img_super_app
+     docker run -d -p 8080:8080 --name img_super_app img_super_app
      ```
 
 - **Instrucciones de configuración:** No se requieren configuraciones adicionales en este caso.
@@ -53,6 +53,11 @@ Diagrama de despliegue y funcionamiento del servicio:
      ```
      python /src/img_super/test/test.py /path/to/image.jpg http://localhost:8080/super
      ```
+     puede ejecutar
+     ```
+     python src/img_super/evaluation/test_post.py src/img_super/evaluation/test-real.png http://localhost:8080/super
+     ```
+
   3. Reemplaza `/path/to/image.jpg` con la ruta de la imagen que deseas enviar y `http://localhost:8080/super` con la URL del servicio FastAPI correspondiente.
   4. El script enviará la imagen al servicio y mostrará la respuesta en formato JSON.
 
