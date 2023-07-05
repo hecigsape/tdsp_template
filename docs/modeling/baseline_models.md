@@ -1,3 +1,4 @@
+
 # Descripción del Modelo
 
 El modelo baseline es un enfoque combinado de dos redes neuronales para detectar y validar si una imagen contiene un rostro superpuesto.
@@ -10,43 +11,42 @@ El resultado de la predicción se devuelve como un score (puntuación), que indi
 
 El modelo baseline utiliza las siguientes variables de entrada: [Lista de variables de entrada utilizadas en el modelo].
 
-
-## Evaluación del modelo
+## Evaluación del Modelo
 
 ### Métricas de evaluación
 
 El modelo baseline se evalúa utilizando las siguientes métricas:
 
-- Loss (Pérdida): 0.2349
-- Accuracy (Exactitud): 0.9107
-- Val_loss (Pérdida en validación): 0.3774
-- Val_accuracy (Exactitud en validación): 0.8673
+- Pérdida (Loss): En el conjunto de entrenamiento, la pérdida obtenida fue de 0.2101, mientras que en el conjunto de validación fue de 0.3243. La pérdida es una medida de qué tan lejos están las predicciones del modelo de los valores reales. Un valor de pérdida más bajo indica un mejor rendimiento del modelo.
+
+- Precisión (Accuracy): En el conjunto de entrenamiento, se obtuvo una precisión de 0.9210, mientras que en el conjunto de validación se obtuvo una precisión de 0.8878. La precisión es la proporción de predicciones correctas realizadas por el modelo en relación con el total de muestras. Un valor de precisión más alto indica un mejor rendimiento del modelo.
 
 ### Resultados de evaluación
 
 A continuación se muestra una tabla con los resultados de evaluación del modelo baseline:
 
-| Métrica       | Resultado |
-|---------------|-----------|
-| Loss          | 0.2349    |
-| Accuracy      | 0.9107    |
-| Val_loss      | 0.3774    |
-| Val_accuracy  | 0.8673    |
+| Métrica     | Conjunto de entrenamiento | Conjunto de validación |
+|-------------|--------------------------|-----------------------|
+| Pérdida     | 0.2101                   | 0.3243                |
+| Precisión   | 0.9210                   | 0.8878                |
 
-## Análisis de los Resultados
+## Análisis de los resultados
 
-El modelo baseline ha demostrado un rendimiento prometedor en la detección de rostros superpuestos. Entre sus fortalezas se destacan:
-- Alta precisión con una exactitud de entrenamiento del 91.07%.
-- Buen rendimiento en la validación con una exactitud de validación del 86.73%.
+El modelo baseline ha mostrado un rendimiento prometedor en la detección de rostros superpuestos. Con una precisión de validación del 88.78%, el modelo es capaz de distinguir de manera efectiva entre imágenes de documentos con rostros superpuestos y sin superponer.
 
-Sin embargo, el modelo baseline también tiene algunas limitaciones:
-- La pérdida en validación (val_loss) es mayor que la pérdida en entrenamiento (loss), lo que indica una posible sobreajuste del modelo.
+Sin embargo, se observaron algunas limitaciones y áreas de mejora:
+
+- El modelo puede beneficiarse de una mayor cantidad de datos de entrenamiento. Un conjunto de datos más grande y diverso podría ayudar al modelo a aprender características más representativas y mejorar su rendimiento en datos no vistos anteriormente.
+
+- Se deben explorar técnicas adicionales para la detección precisa de rostros superpuestos. La detección inicial basada en el modelo "faster" es rápida pero puede tener limitaciones en la precisión. Investigar enfoques más avanzados, como el uso de redes neuronales más complejas o el ajuste de hiperparámetros, puede mejorar la precisión de la detección inicial.
+
+- Existe la posibilidad de falsos positivos o falsos negativos en la validación final debido a la naturaleza compleja de la detección de rostros superpuestos.
 
 ## Conclusiones
 
-En conclusión, el modelo baseline proporciona una línea base para el rendimiento de los modelos posteriores en la detección de rostros superpuestos. Si bien presenta algunas limitaciones, su rendimiento prometedor y alta precisión hacen de este modelo un buen punto de partida.
+En conclusión, el modelo baseline proporciona una línea base para el rendimiento de los modelos posteriores en la detección de rostros superpuestos. Si bien presenta algunas limitaciones, su rendimiento prometedor y alta velocidad hacen de este modelo un buen punto de partida.
 
-Para mejorar el rendimiento, se sugiere explorar técnicas de regularización y ajuste de hiperparámetros para reducir el sobreajuste y obtener un mejor equilibrio entre la pérdida y la exactitud en entrenamiento y validación.
+Para mejorar el rendimiento, se sugiere explorar técnicas avanzadas de detección y validación de rostros, así como el uso de conjuntos de datos más grandes y diversos para entrenar los modelos.
 
 ## Referencias
 
