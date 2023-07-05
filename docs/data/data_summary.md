@@ -1,27 +1,39 @@
 # Reporte de Datos
 
-Este documento contiene los resultados del análisis exploratorio de datos.
+Este documento contiene los resultados del análisis exploratorio de datos del proyecto de reconocimiento de rostros superpuestos en documentos.
 
 ## Resumen general de los datos
 
-En esta sección se presenta un resumen general de los datos. Se describe el número total de observaciones, variables, el tipo de variables, la presencia de valores faltantes y la distribución de las variables.
+- Número total de observaciones: 500
+- Número de variables: X (variables relevantes para el reconocimiento de rostros superpuestos)
+- Tipo de variables: Variables de imagen y variables categóricas (clase objetivo)
+- Valores faltantes: No se encontraron valores faltantes en las variables relevantes.
+- Distribución de las variables: Las variables de imagen representan rostros en documentos, y la variable categórica indica si el rostro está superpuesto o no.
 
 ## Resumen de calidad de los datos
 
-En esta sección se presenta un resumen de la calidad de los datos. Se describe la cantidad y porcentaje de valores faltantes, valores extremos, errores y duplicados. También se muestran las acciones tomadas para abordar estos problemas.
+- Valores faltantes: No se encontraron valores faltantes en las variables relevantes.
+- Valores extremos: No se identificaron valores extremos en las variables relevantes.
+- Errores: No se detectaron errores evidentes en los datos.
+- Duplicados: No se encontraron observaciones duplicadas en los datos relevantes.
 
 ## Variable objetivo
 
-En esta sección se describe la variable objetivo. Se muestra la distribución de la variable y se presentan gráficos que permiten entender mejor su comportamiento.
+La variable objetivo es la clasificación de rostros superpuestos en documentos. A continuación, se muestra la distribución de la variable y un gráfico que ayuda a entender mejor su comportamiento.
+
+[Insertar gráfico de distribución de la variable objetivo]
 
 ## Variables individuales
 
-En esta sección se presenta un análisis detallado de cada variable individual. Se muestran estadísticas descriptivas, gráficos de distribución y de relación con la variable objetivo (si aplica). Además, se describen posibles transformaciones que se pueden aplicar a la variable.
+A continuación, se presenta un análisis detallado de cada variable individual relevante:
 
-## Ranking de variables
+1. Variable de imagen docuemnto superpuesto: 
+ imagen ejemplo de un docuemnto superpuesto, se han sensurado las parte sensibles del docuemnto aplicando un filtro gausiano 
+![methods](images/example_false.png)
 
-En esta sección se presenta un ranking de las variables más importantes para predecir la variable objetivo. Se utilizan técnicas como la correlación, el análisis de componentes principales (PCA) o la importancia de las variables en un modelo de aprendizaje automático.
+3. Variable de imagen docuemnto real: 
+imagen ejemplo de un docuemnto real,se han sensurado las parte sensibles del docuemnto aplicando un filtro gausiano 
 
-## Relación entre variables explicativas y variable objetivo
+![methods](images/example_true.png)
 
-En esta sección se presenta un análisis de la relación entre las variables explicativas y la variable objetivo. Se utilizan gráficos como la matriz de correlación y el diagrama de dispersión para entender mejor la relación entre las variables. Además, se pueden utilizar técnicas como la regresión lineal para modelar la relación entre las variables.
+En conclusión, el proyecto tiene como objetivo desarrollar un sistema de reconocimiento de rostros en documentos que pueda clasificar si una imagen de rostro está superpuesta o no. Se busca mejorar la seguridad y confiabilidad de los procesos que dependen de la autenticidad de las imágenes faciales, previniendo situaciones de fraude o manipulación en documentos.
